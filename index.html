@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartRide monthly pickup and drop subscription demo for daily commuters.">
+  <title>SmartRide | Monthly Ride Subscription</title>
+  <link rel="stylesheet" href="landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="navbar">
+  <a class="brand" href="#home">Smart<span>Ride.</span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#plans">Subscriptions</a>
+    <a href="#booking">Book Ride</a><a href="#dashboard">My Bookings</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="dashboard-link" href="portal.html">Dashboards ↗</a>
+    <button class="btn primary" onclick="scrollToSection('booking')">Book Now ↗</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">✦ YOUR DAILY COMMUTE PARTNER</span>
+    <h1>Move smarter.<br>Travel <span>better.</span></h1>
+    <p>Your everyday commute, simplified. Subscribe to a monthly pickup and drop service for your office, college and daily travel.</p>
+    <div class="hero-buttons">
+      <button class="btn primary" onclick="scrollToSection('plans')">Explore Plans ↗</button>
+      <button class="btn outline" onclick="scrollToSection('services')">Discover More</button>
+    </div>
+    <div class="hero-stats">
+      <div><strong>Monthly</strong><small>Flexible plans</small></div>
+      <div><strong>24/7</strong><small>Booking access</small></div>
+      <div><strong>Easy</strong><small>Subscription</small></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" alt="Luxury sports car">
+    <div class="image-caption"><span>YOUR RIDE, YOUR ROUTINE</span><strong>Every journey matters.</strong></div>
+    <div class="floating-card"><span class="green-dot"></span><div><b>Smart mobility</b><small>Designed around you</small></div></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-title"><span>WHY SMARTRIDE</span><h2>Travel without the daily hassle.</h2><p>One subscription. A simpler everyday commute.</p></div>
+  <div class="service-grid">
+    <article class="service-card"><div class="service-icon">⌖</div><h3>Doorstep Pickup</h3><p>Set your preferred pickup and drop locations.</p></article>
+    <article class="service-card"><div class="service-icon">◷</div><h3>Flexible Schedule</h3><p>Choose the days and timings that suit your routine.</p></article>
+    <article class="service-card"><div class="service-icon">₹</div><h3>Monthly Plans</h3><p>Choose a subscription that fits your travel needs.</p></article>
+    <article class="service-card"><div class="service-icon">♧</div><h3>Vehicle Choices</h3><p>Select from sedan, executive, SUV and van options.</p></article>
+  </div>
+</section>
+
+<section class="section vehicles-section">
+  <div class="section-title"><span>OUR FLEET</span><h2>Find your perfect ride.</h2><p>Choose a vehicle category for your daily journey.</p></div>
+  <div class="vehicle-grid">
+    <article class="vehicle-card"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=850&q=80" alt="Sedan car" loading="lazy"><div><h3>Smart Sedan</h3><p>Comfortable everyday travel</p></div></article>
+    <article class="vehicle-card"><img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=850&q=80" alt="SUV vehicle" loading="lazy"><div><h3>Smart SUV</h3><p>Extra space and comfort</p></div></article>
+    <article class="vehicle-card"><img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=850&q=80" alt="Premium vehicle" loading="lazy"><div><h3>Smart Executive</h3><p>A premium travel experience</p></div></article>
+  </div>
+</section>
+
+<section class="section" id="plans">
+  <div class="section-title"><span>MONTHLY SUBSCRIPTIONS</span><h2>Choose your monthly plan.</h2><p>Transparent sample prices for your SmartRide project.</p></div>
+  <div class="plans-grid" id="plansGrid"></div>
+</section>
+
+<section class="section booking-section" id="booking">
+  <div class="section-title"><span>START YOUR JOURNEY</span><h2>Book your monthly ride.</h2><p>Fill in your travel details to create a subscription request.</p></div>
+  <form class="booking-form" id="bookingForm">
+    <div class="form-heading"><h3>Passenger Information</h3><span>SMART RIDE BOOKING</span></div>
+    <div class="form-grid">
+      <div class="field"><label for="name">Full Name *</label><input id="name" type="text" placeholder="Your full name" required maxlength="80"></div>
+      <div class="field"><label for="phone">Mobile Number *</label><input id="phone" type="tel" maxlength="10" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="10 digit mobile" required></div>
+      <div class="field"><label for="city">City</label><select id="city"><option>Ramgarh</option><option>Ranchi</option><option>Hazaribagh</option><option>Bokaro</option><option>Other</option></select></div>
+      <div class="field"><label for="vehicle">Vehicle Type *</label><select id="vehicle" required><option value="">Select vehicle</option><option>Smart Sedan</option><option>Smart SUV</option><option>Smart Executive</option><option>Smart Van</option></select></div>
+      <div class="field full"><label for="pickup">Pickup Location *</label><input id="pickup" placeholder="Enter pickup address" required maxlength="160"></div>
+      <div class="field full"><label for="drop">Drop Location *</label><input id="drop" placeholder="Enter destination" required maxlength="160"></div>
+      <div class="field"><label for="time">Pickup Time *</label><input id="time" type="time" value="08:30" required></div>
+      <div class="field"><label for="startDate">Subscription Start Date *</label><input id="startDate" type="date" required></div>
+      <div class="field full"><label for="planSelect">Monthly Plan *</label><select id="planSelect" required><option value="">Choose your plan</option></select></div>
+      <div class="field full"><label>Travel Days</label><div class="days">
+        <label><input type="checkbox" value="Mon" checked> Mon</label><label><input type="checkbox" value="Tue" checked> Tue</label>
+        <label><input type="checkbox" value="Wed" checked> Wed</label><label><input type="checkbox" value="Thu" checked> Thu</label>
+        <label><input type="checkbox" value="Fri" checked> Fri</label><label><input type="checkbox" value="Sat"> Sat</label><label><input type="checkbox" value="Sun"> Sun</label>
+      </div></div>
+    </div>
+    <p class="form-note">Demo only: this form saves requests in your browser. It does not dispatch a driver or process a payment.</p>
+    <button class="btn primary submit-btn" type="submit">Confirm Subscription Request ↗</button>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+  </form>
+</section>
+
+<section class="section" id="dashboard">
+  <div class="section-title"><span>YOUR ACCOUNT</span><h2>My Bookings</h2><p>View and manage your saved subscription requests.</p></div>
+  <div class="dashboard"><div class="dashboard-top"><h3>Recent Requests</h3><button class="btn outline" onclick="clearBookings()">Clear All</button></div><div id="bookingList"></div></div>
+</section>
+
+<section class="section">
+  <div class="section-title"><span>HELP CENTRE</span><h2>Frequently asked questions.</h2></div>
+  <div class="faq">
+    <details><summary>What is SmartRide?</summary><p>A monthly pickup and drop subscription platform concept for daily commuters.</p></details>
+    <details><summary>Can I select my own travel days?</summary><p>Yes, select your preferred weekdays and weekends in the booking form.</p></details>
+    <details><summary>Can I change my booking?</summary><p>This frontend demo supports removing requests. Editing and rescheduling can be added later.</p></details>
+    <details><summary>Does this website process real payments?</summary><p>No. A real payment system requires a secure backend and payment gateway integration.</p></details>
+  </div>
+</section>
+
+<footer><div class="footer-inner"><a class="brand" href="#home">Smart<span>Ride.</span></a><p>Smarter daily mobility · Ramgarh, Jharkhand</p><p>© 2026 SmartRide Demo</p><a class="footer-dashboard" href="portal.html">Open role dashboards ↗</a></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
